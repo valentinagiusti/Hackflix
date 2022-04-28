@@ -1,0 +1,221 @@
+body {
+  background-color: #111;
+  color: white;
+}
+
+/* NAVBAR */
+
+.nav-123 {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: rem;
+  z-index: 100;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav-123-black {
+  background-color: #111;
+}
+
+.navbar-button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  background: rgba(51, 51, 51, 0.5);
+  text-decoration: none;
+  z-index: 90;
+}
+
+#hackflix-logo {
+  width: 10rem;
+}
+
+.navbar-buttons {
+  margin-right: 1rem;
+}
+
+.dropdown-menu-search {
+  background-color: black;
+}
+
+/* HEADER */
+
+.header-12 {
+  color: white;
+  height: 50rem;
+  object-fit: contain;
+}
+
+.header-fade {
+  height: 20rem;
+  background-image: linear-gradient(180deg, transparent, #111, #111);
+}
+
+/* MOVIES */
+
+.movie-button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  background: rgba(51, 51, 51, 0.5);
+  text-decoration: none;
+  z-index: 90;
+}
+
+.movie-overview {
+  max-width: 50rem;
+  z-index: 300;
+}
+
+.movie-poster {
+  transition: transform 450ms;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.movie-poster:hover {
+  transform: scale(1.08);
+  border: rgb(141, 13, 13) solid 0.08rem;
+}
+
+.movie-content {
+  padding-top: 30rem;
+  height: 1rem;
+}
+
+.movie-button:hover {
+  color: black;
+  background: #e6e6e6;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.movie-detail-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.movie-fading {
+  background-color: rgba(29, 29, 29, 0.753);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: rgba(22, 22, 22, 0.37) 1px solid;
+  z-index: 100;
+  margin-bottom: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+/* FORM -SEARCH MOVIES */
+
+.search-form {
+  position: relative;
+  text-align: center;
+  top: 10rem;
+}
+
+.movies-search-form {
+  position: relative;
+  top: 18rem;
+}
+
+/* SCROLL BUTTON */
+
+.scroll-button {
+  position: fixed;
+  width: 100%;
+  bottom: 3rem;
+  left: 45rem;
+  height: 4rem;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: rgb(71, 15, 15);
+}
+
+/* BURGUER NAVBAR MENU */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
