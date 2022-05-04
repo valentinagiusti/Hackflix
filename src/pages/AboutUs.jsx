@@ -1,5 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { FaReact } from "react-icons/fa";
+import { FaMdb } from "react-icons/fa";
+import { BsFillBootstrapFill } from "react-icons/bs";
 
 function AboutUs() {
   return (
@@ -7,28 +10,30 @@ function AboutUs() {
       <Navbar />
       <div className="container">
         <h1 className="text-danger" style={{ paddingTop: "15rem" }}>
-          About our company
+          ABOUT THIS
         </h1>
         <p className="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-          quisquam ipsum repellat nesciunt. Non in consequuntur perferendis ab
-          voluptas dolore corporis, dolores iusto aperiam nam consectetur quis
-          quas cumque sint?
+          This project was made by{" "}
+          <span className="fw-bold">Valentina Giusti</span> as a practice
+          exercise the Bootcamp dictated by Hack Academy. The development of the
+          page lasted one week, with a few details corrected after the Bootcamp
+          ended.
         </p>
-        <h2 className="text-danger">Hackflix</h2>
-        <p className="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          doloremque quae, animi impedit rerum atque sint, ab suscipit repellat
-          reiciendis neque? Explicabo a officia ex corrupti labore sequi minima
-          numquam.
+        <h2 className="text-danger my-5">TECHNOLOGIES</h2>
+        <p>
+          This project was developed with React.js, making calls to The Movie
+          Database API to obtain information about the movies.
         </p>
-        <h2 className="text-danger">Why should you work with us?</h2>
-        <p className="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          doloremque quae, animi impedit rerum atque sint, ab suscipit repellat
-          reiciendis neque? Explicabo a officia ex corrupti labore sequi minima
-          numquam.
-        </p>
+        <div className="d-flex flex-row">
+          <div className="text-center p-4">
+            <FaReact size={100} />
+            <p className="mt-3">React.js</p>
+          </div>
+          <div className="text-center p-4">
+            <FaMdb size={100} />
+            <p className="mt-3">TMDB API</p>
+          </div>
+        </div>
       </div>
     </>
   );
