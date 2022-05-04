@@ -16,7 +16,7 @@ function App() {
           <Route path="/search-movie-by-title" element={<SearchMovie />} />
           <Route path="/search-movie-by-rating" element={<SearchByRating />} />
           <Route path="/pelicula/:id" element={<MovieDetails />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-this-project" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>

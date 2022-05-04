@@ -11,6 +11,7 @@ function MovieDetails() {
     const fetchData = async () => {
       const request = await axios.get(`movie/${id}`, tmdbApiConfig);
       setMovie(request.data);
+      console.log(movie);
       return request;
     };
     fetchData();
@@ -22,6 +23,8 @@ function MovieDetails() {
         backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
         height: "100vh",
       }}
     >
@@ -37,6 +40,7 @@ function MovieDetails() {
           <button className="movie-button">Add To My List</button>
         </div>
       </div>
+      <div className="movie-detail-fade"></div>
     </div>
   );
 }

@@ -1,11 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component, Fragment } from "react";
 import { ReactComponent as HackflixLogo } from "../img/HACKFLIX.svg";
+import { ReactComponent as HamburguerMenu } from "../img/hamburguer.svg";
+import { ReactComponent as CloseButton } from "../img/close.svg";
 import { Link } from "react-router-dom";
 import { DropdownButton, Dropdown } from "react-bootstrap";
-import { slide as Menu } from "react-burger-menu";
+import OffCanvas from "react-aria-offcanvas";
+
+const Navigation = () => (
+  <nav id="menu">
+    <ul>
+      <li>
+        <a className="text-decoration-none text-white fw-bold " href="/">
+          HOME
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-decoration-none text-white fw-bold "
+          href="/about-this-project"
+        >
+          ABOUT THIS PROJECT
+        </a>
+      </li>
+      <li>
+        <a className="text-decoration-none text-white fw-bold " href="/contact">
+          CONTACT
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-decoration-none text-white fw-bold "
+          href="/search-movie-by-title"
+        >
+          SEARCH BY TITLE
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-decoration-none text-white fw-bold "
+          href="/search-movie-by-rating"
+        >
+          SEARCH BY RATING
+        </a>
+      </li>
+    </ul>
+  </nav>
+);
 
 function Navbar() {
   const [show, setShow] = useState(false);
+  const [state, setState] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -17,6 +61,16 @@ function Navbar() {
       window.removeEventListener("scroll");
     };
   }, []);
+
+  const handleOpen = async (ev) => {
+    ev.preventDefault();
+    setState(true);
+  };
+
+  const handleClose = async (ev) => {
+    ev.preventDefault();
+    setState(false);
+  };
 
   return (
     <div className={`nav-123 ${show && "nav-123-black"}`}>
@@ -41,9 +95,9 @@ function Navbar() {
                 className={`btn btn-danger ${
                   show && "btn-outline-danger bg-transparent"
                 }`}
-                to="/about-us"
+                to="/about-this-project"
               >
-                About Us
+                About This Project
               </Link>
             </li>
             <li className="me-4">
@@ -90,19 +144,33 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <div className="d-md-none">
-        <Menu>
-          <a id="home" className="menu-item" href="/">
-            Home
-          </a>
-          <a id="about" className="menu-item" href="/about">
-            About
-          </a>
-          <a id="contact" className="menu-item" href="/contact">
-            Contact
-          </a>
-        </Menu>
-      </div>
+      <Fragment>
+        <HamburguerMenu
+          id="hamburguer-button"
+          aria-label="Menu"
+          aria-controls="menu"
+          aria-expanded={state}
+          onClick={handleOpen}
+          className="d-md-none"
+        />
+
+        <OffCanvas
+          isOpen={state}
+          style={{
+            /*  overlay: { display: "flex", justifyContent: "end" }, */
+            content: { display: "flex", flexDirection: "column" },
+          }}
+          onClose={handleClose}
+        >
+          <CloseButton
+            className="justify-content-end"
+            id="close-button"
+            onClick={handleClose}
+          />
+
+          <Navigation />
+        </OffCanvas>
+      </Fragment>
     </div>
   );
 }
