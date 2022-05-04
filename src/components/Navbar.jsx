@@ -158,11 +158,16 @@ function Navbar() {
           isOpen={state}
           style={{
             /*  overlay: { display: "flex", justifyContent: "end" }, */
-            content: { display: "flex", flexDirection: "column" },
+            content: {
+              display: "flex",
+              flexDirection: "column",
+              backgroundColor: "rgba(17, 17, 17, 0.712)",
+            },
           }}
           onClose={handleClose}
         >
           <CloseButton
+            style={{ display: "flex", justifyContent: "end" }}
             className="justify-content-end"
             id="close-button"
             onClick={handleClose}
