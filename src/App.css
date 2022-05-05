@@ -103,10 +103,10 @@ body {
   text-decoration: none;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 999px) {
   .movie-content-detail {
     z-index: 300;
-    padding-top: 60rem;
+    padding-top: 25rem;
     z-index: 400;
   }
 
@@ -120,10 +120,9 @@ body {
   }
 }
 
-@media (max-width: 599px) {
+@media (min-width: 1000px) {
   .movie-content-detail {
-    z-index: 300;
-    padding-top: 25rem;
+    padding-top: 35rem;
     z-index: 400;
   }
 
@@ -131,7 +130,7 @@ body {
     position: absolute;
     width: 100%;
     bottom: 0px;
-    height: 20rem;
+    height: 10rem;
     background-image: linear-gradient(180deg, transparent, #111, #111);
     z-index: -1;
   }
@@ -172,6 +171,7 @@ li {
   width: 3rem;
   margin: 1rem;
   cursor: pointer;
+  z-index: 1000;
 }
 #close-button {
   margin-top: 1rem;
